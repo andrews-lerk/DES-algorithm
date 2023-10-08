@@ -4,9 +4,10 @@ import (
 	"DES-algorithm/core/tables"
 )
 
-func Encrypt(text string) {
+func Encrypt(text string, key string) {
 	binaryData := Encode(text)
-	for i := 0; i <= len(binaryData); i += 64 {
+	binaryKey := QuantizeKey(Encode(key))
+	for i := 0; i < len(binaryData); i += 64 {
 		var block64bit string
 		if len(binaryData[i:]) < 64 {
 			block64bit = QuantizeBlock(binaryData[i:])
@@ -14,7 +15,7 @@ func Encrypt(text string) {
 			block64bit = binaryData[i : i+64]
 		}
 		initialPermutation(&block64bit)
-		FeistelAlgorithm(block64bit[:32], block64bit[32:])
+		FeistelAlgorithm(block64bit[:32], block64bit[32:], binaryKey)
 	}
 }
 

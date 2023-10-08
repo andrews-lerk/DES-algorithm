@@ -5,7 +5,7 @@ import (
 	"strconv"
 )
 
-const maxSymbolSize = 16
+const maxSymbolSize = 8
 
 func Encode(text string) string {
 	binary := ""

@@ -5,6 +5,7 @@ import (
 )
 
 func main() {
-	data := "s"
-	core.Encrypt(data)
+	data := "eternity"
+	key := "alekos"
+	core.Encrypt(data, key)
 }
