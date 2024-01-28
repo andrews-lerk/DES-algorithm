@@ -1,7 +1,7 @@
-package core
+package src
 
 import (
-	"DES-algorithm/core/tables"
+	"DES-algorithm/src/tables"
 )
 
 func Create16LapKeys(key string) [16]string {

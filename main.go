@@ -1,11 +1,15 @@
 package main
 
 import (
-	"DES-algorithm/core"
+	"DES-algorithm/src"
+	"fmt"
 )
 
 func main() {
-	data := "eternity"
-	key := "alekos"
-	core.Encrypt(data, key)
+	data := "secret information to encryption"
+	key := "lerk2003"
+	encryptedData := src.Encrypt(data, key)
+	fmt.Println(encryptedData)
+	decryptedData := src.Decrypt(encryptedData, key)
+	fmt.Println(decryptedData)
 }
